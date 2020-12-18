@@ -43,12 +43,13 @@ We aim to make ESG scoring a data driven approach. We leverage the GDelt news so
 
 We have packaged our application as a streamlit app. Note that a majority of the codebase is performed in databricks and an architecture diagram can be found in our slides. However, we have created an application to run locally. To get started, clone the repository into a directory of your choice and ensure your python environment has the following dependencies:
 <ul>
-<li>Pandas</li>
+<li>Streamlit</li> (version 0.70.0 or later)
+<li>Pandas</li> (version 1.0.0 or later)
 <li>Numpy</li>
-<li>Streamlit</li>
 <li>Altair</li>
 <li>NetworkX</li>
-<li>Plotly Express</li>
+<li>Plotly</li>
+<li>Colour</li>
 </ul>
 
 Navigate to the directory you cloned and run the following in your command prompt:
@@ -56,6 +57,8 @@ Navigate to the directory you cloned and run the following in your command promp
 streamlit run app.py
 ```
 You should be navigated to a localhost link where you will see the application running.
+
+Thanks to Streamlit Sharing, we have also been able to host the app for free! You can find that [**HERE**](https://share.streamlit.io/hannahawalsh/esg_ai/main/app.py)!
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
