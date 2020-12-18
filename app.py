@@ -70,7 +70,7 @@ def main(time_period):
 
 
     ###### SET UP PAGE ######
-    icon_path = "esg_ai_logo.png"
+    icon_path = os.path.join(".", "raw", "esg_ai_logo.png")
     st.set_page_config(page_title="ESG AI", page_icon=icon_path,
                        layout='centered', initial_sidebar_state="collapsed")
     _, logo, _ = st.beta_columns(3)
