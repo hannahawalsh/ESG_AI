@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import os
 
-import streamlit as st 
 
 class Data:
 
@@ -29,8 +28,6 @@ class Data:
             print("We don't have data for that")
             return
         self.paths(data_path)
-
-        st.table(pd.read_csv(self.data, nrows=3))
 
         data = {"conn": pd.read_csv(self.connections),
                 "data": pd.read_csv(self.data, parse_dates=["DATE"],
