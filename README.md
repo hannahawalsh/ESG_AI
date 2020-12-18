@@ -1,4 +1,5 @@
 # ESG AI
+**Demonstrating the power of Streamlit.** [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/hannahawalsh/esg_ai/main/app.py)
 
 ## Background
 Environmental, Social, & Governance (ESG) investing has become the latest rage in the world of finance. The idea is to invest in companies that are sustainable, particularly in in the 3 ESG categories:
