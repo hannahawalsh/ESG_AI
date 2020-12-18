@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import os
 
+import streamlit as st 
+
 class Data:
 
     def paths(self, data_path):
