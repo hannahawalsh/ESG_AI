@@ -2,11 +2,11 @@
 **Demonstrating the power of Streamlit.** [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/hannahawalsh/esg_ai/main/app.py)
 
 ## Background
-Environmental, Social, & Governance (ESG) investing has become the latest rage in the world of finance. The idea is to invest in companies that are sustainable, particularly in in the 3 ESG categories:
+Environmental, Social, & Governance ([ESG](https://en.wikipedia.org/wiki/Environmental,_social_and_corporate_governance)) investing has rapidly gained popularity in the world of finance. The idea is to invest in companies that are sustainable, particularly in in the 3 ESG categories:
 <ul>
-<li><b>Environmental</b> - Issues such as climate change and pollution</li>
-<li><b>Social</b> - Issues around workplace practices and human capital</li>
-<li><b>Governance</b> - Issues such as executive pay, accounting, and ethics</li>
+  <li><b><u>E</u>nvironmental</b> - Issues such as climate change and pollution</li>
+  <li><b><u>Social</u></b> - Issues around workplace practices and human capital</li>
+  <li><b><u>Governance</u></b> - Issues such as executive pay, accounting, and ethics</li>
 </ul>
 
 There has been a tremendous amount of research around ESG investing. Harvard Law School Forum on Corporate Governance published a paper titled "ESG Matters" in which they studied companies with particularly high ESG scores compared to those with low scores with the following conclusions: 
@@ -59,6 +59,9 @@ streamlit run app.py
 You should be navigated to a localhost link where you will see the application running.
 
 Thanks to Streamlit Sharing, we have also been able to host the app for free! You can find that [**HERE**](https://share.streamlit.io/hannahawalsh/esg_ai/main/app.py)!
+
+## Note
+We originally built our code in [this other repo](https://github.com/adamFinastra/ESGAI), but due to Streamlit Sharing being in beta mode, it was forced to be moved to this Github account, which has permissions.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
