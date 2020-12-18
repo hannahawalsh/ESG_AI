@@ -6,12 +6,12 @@
 ---
 Environmental, Social, & Governance ([ESG](https://en.wikipedia.org/wiki/Environmental,_social_and_corporate_governance)) investing has rapidly gained popularity in the world of finance. The idea is to invest in companies that are sustainable, particularly in in the 3 ESG categories:
 <ul>
-  <li><b><u>E</u>nvironmental</b> - Issues such as climate change and pollution</li>
-  <li><b><u>Social</u></b> - Issues around workplace practices and human capital</li>
-  <li><b><u>Governance</u></b> - Issues such as executive pay, accounting, and ethics</li>
+  <li><b>E<nvironmental</b> - Issues such as climate change and pollution</li>
+  <li><b>Social</b> - Issues around workplace practices and human capital</li>
+  <li><b>Governance</b> - Issues such as executive pay, accounting, and ethics</li>
 </ul>
 
-There has been a tremendous amount of research around ESG investing. Harvard Law School Forum on Corporate Governance published a paper titled "ESG Matters" in which they studied companies with particularly high ESG scores compared to those with low scores with the following conclusions: 
+There has been a tremendous amount of research around ESG investing. Harvard Law School Forum on Corporate Governance published a paper titled "ESG Matters" in which they studied companies with particularly high ESG scores compared to those with low scores with the following conclusions:
 <ol>
 <li>Higher ESG is associated with higher profitability and lower volatility</li>
 <li>High ESG scoring companies tend to be good allocators of capital</li>
@@ -19,19 +19,19 @@ There has been a tremendous amount of research around ESG investing. Harvard Law
 </ol>
 
 <br></br>
-### ESG Reporting 
+### ESG Reporting
 ---
-Currently 90% of S&P 500 companies publish annual sustainability reports, which can range from as little as 30 pages to over 200 pages. There is not one clear reporting format, but there are some general reporting guidelines (e.g Nasdaq). Analysts leverage these reports to understand company trends and themes, which can take weeks for an investment thesis on a particular company. 
+Currently 90% of S&P 500 companies publish annual sustainability reports, which can range from as little as 30 pages to over 200 pages. There is not one clear reporting format, but there are some general reporting guidelines (e.g Nasdaq). Analysts leverage these reports to understand company trends and themes, which can take weeks for an investment thesis on a particular company.
 
 <br></br>
-### Greenwashing 
+### Greenwashing
 ---
 Greenwashing is the practice of making statements or policies that make an investment appear more serious about ESG than it actually is. We need to be mindful of ESG reporting and make sure we are leveraging credible sources to minimize the effect of greenwashing on our sustainability analysis.
 
 <br></br>
 ### Current Approach
 ---
-ESG scoring is tricky. Research analysts leverage many sources to manually come up with scores around the ESG categories. These scores are updated every so often and are not real-time. As there are thousands of companies, the current approach is hardly scalable. 
+ESG scoring is tricky. Research analysts leverage many sources to manually come up with scores around the ESG categories. These scores are updated every so often and are not real-time. As there are thousands of companies, the current approach is hardly scalable.
 
 <br></br>
 ### Our Approach
@@ -41,10 +41,10 @@ We aim to make ESG scoring a data driven approach. We leverage the GDelt news so
 <br></br>
 ### Examples  of ESG found in News
 ---
-#### E: Nike (NKE): 
+#### E: Nike (NKE):
 “Its Flyknit and Flyleather products were developed with environmental sustainability in mind. Nike signed onto a coalition of companies called RE100, vowing to source 100% renewable energy across its operations by 2025. There's more, but any interested investors should read Nike's latest sustainability report, which uses the GRI framework, the Sustainability Accounting Standards Board (SASB), and the United Nations' Sustainable Development Goals (SDG).”  
 
-#### S: Accenture (ACN): 
+#### S: Accenture (ACN):
 “Accenture pays close attention to its diversity and inclusion in its workforce. The company plans to improve its workplace gender ratios, with a goal to have 50% female and 50% male employees by the end of 2025. Accenture plans to better its corporate makeup as well, pledging to have at least 25% female managing directors by 2020.”  
 
 #### G: Intuit (INTU):
@@ -55,7 +55,7 @@ We aim to make ESG scoring a data driven approach. We leverage the GDelt news so
 
 We have packaged our application as a streamlit app. Note that a majority of the codebase is performed in databricks and an architecture diagram can be found in our slides. However, we have created an application to run locally. To get started, clone the repository into a directory of your choice and ensure your python environment has the following dependencies:
 <ul>
-<li>Streamlit (version 0.70.0 or later)</li> 
+<li>Streamlit (version 0.70.0 or later)</li>
 <li>Pandas (version 1.0.0 or later)</li>
 <li>Numpy</li>
 <li>Altair</li>
