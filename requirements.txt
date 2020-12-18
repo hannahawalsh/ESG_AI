@@ -1,0 +1,7 @@
+numpy>=1.19.0
+streamlit==0.70.0
+pandas>=1.0.0
+colour>=0.1.0
+plotly>=4.14.0
+altair>=4.1.0
+networkx>=2.5
