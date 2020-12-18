@@ -28,6 +28,8 @@ class Data:
             return
         self.paths(data_path)
 
+        st.table(pd.read_csv(self.data, nrows=3))
+
         data = {"conn": pd.read_csv(self.connections),
                 "data": pd.read_csv(self.data, parse_dates=["DATE"],
                                  infer_datetime_format=True),
