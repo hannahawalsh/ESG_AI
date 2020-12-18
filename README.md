@@ -1,6 +1,7 @@
 # ESG AI
-**Demonstrating the power of Streamlit.** [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/hannahawalsh/esg_ai/main/app.py)
-
+**Demonstrating the power of Streamlit.** [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/hannahawalsh/esg_ai/main/app.py)  
+<br></br>
+![Example of app](./raw/ScreenCapture2.gif)
 
 ## Background
 ---
@@ -32,8 +33,16 @@ ESG scoring is tricky. Research analysts leverage many sources to manually come 
 
 <br></br>
 ### Our Approach
----
-We aim to make ESG scoring an automatic, data-driven process. We leverage the [GDelt](https://www.gdeltproject.org/) news source to ingest historical and real-time news articles, tweets, and other digital publications that we classify into the three ESG categories. We then perform scoring based on sentiment, which can be adjusted based on given windows of time. Additionally, we leverage the deep learning algorithm, **Node2Vec** to embed the connections on a graph from news article mentions. This allows us to find better suggested competitors to compare ESG results against.
+---  
+We aim to make ESG scoring an automatic, data-driven process. We leverage the [GDelt](https://www.gdeltproject.org/) news source to ingest historical and real-time news articles, tweets, and other digital publications that we classify into the three ESG categories. 
+<br></br>
+![Example of app](./raw/ScreenCapture1.gif)
+<br></br>
+![Example of app](./raw/ScreenCapture4.gif)
+<br></br>
+We then perform scoring based on sentiment, which can be adjusted based on given windows of time. Additionally, we leverage the deep learning algorithm, **Node2Vec** to embed the connections on a graph from news article mentions. This allows us to find better suggested competitors, allowing us to compare ESG results across companies. 
+<br></br>
+![Example of app](./raw/ScreenCapture5.gif)  
 
 <br></br>
 ### Examples  of ESG found in News
@@ -77,6 +86,8 @@ Once you have navigated to the cloned directory, run the following command:
 streamlit run app.py
 ```
 You should be navigated to a localhost link where you will see the application running.
+
+![Example of app](./raw/ScreenCapture3.gif)
 
 Thanks to Streamlit Sharing, we have also been able to host the app for free! You can find that [**HERE**](https://share.streamlit.io/hannahawalsh/esg_ai/main/app.py)!
 
