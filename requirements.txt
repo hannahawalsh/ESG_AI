@@ -7,3 +7,4 @@ altair>=4.1.0
 networkx>=2.5
 metadata_parser>=0.10.4
 xlrd>=1.2.0
+tabulate>=0.8.7
