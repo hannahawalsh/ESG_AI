@@ -19,16 +19,14 @@ class Data:
 
 
 
-    def read(self, time_period="ten_days"):
-        if time_period == "ten_days":
-            data_path = os.path.join(".", "Data", "dec1_to_dec10")
-        elif time_period == "one_month":
-            data_path = os.path.join(".", "Data", "nov11_to_dec12")
-        else:
-            print("We don't have data for that")
-            return
-        self.paths(data_path)
+    def read(self, start_day="jan6", end_day="jan12"):
+        dir_name = f"{start_day}_to_{end_day}"
 
+        if dir_name not in os.listdir("Data"):
+            raise NameError(f"There isn't data for {dir_name}")
+
+        data_path = os.path.join(".", "Data", dir_name)
+        self.paths(data_path)
         data = {"conn": pd.read_csv(self.connections),
                 "data": pd.read_csv(self.data, parse_dates=["DATE"],
                                  infer_datetime_format=True),

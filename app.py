@@ -12,6 +12,7 @@ from plot_setup import finastra_theme
 from download_data import Data
 import sys
 
+import metadata_parser
 
 ####### CACHED FUNCTIONS ######
 @st.cache(show_spinner=False, suppress_st_warning=True)
@@ -22,15 +23,16 @@ def filter_company_data(df_company, esg_categories, start, end):
         X = df_company[df_company[i] == True]
         comps.append(X)
     df_company = pd.concat(comps)
-    df_company = df_company[(df_company.DATE >= start) &
-                            (df_company.DATE <= end)]
+    # df_company = df_company[(df_company.DATE >= start) &
+    #                         (df_company.DATE <= end)]
+    df_company = df_company[df_company.DATE.between(start, end)]
     return df_company
 
 
 @st.cache(show_spinner=False, suppress_st_warning=True,
           allow_output_mutation=True)
-def load_data(time_period):
-    data = Data().read(time_period)
+def load_data(start_data, end_data):
+    data = Data().read(start_data, end_data)
     companies = data["data"].Organization.sort_values().unique().tolist()
     companies.insert(0,"Select a Company")
     return data, companies
@@ -62,7 +64,16 @@ def filter_on_date(df, start, end, date_col="DATE"):
     return df
 
 
-def main(time_period):
+def get_clickable_name(url):
+    try:
+        T = metadata_parser.MetadataParser(url=url, search_head_only=True)
+        title = T.metadata["og"]["title"].replace("|", " - ")
+        return f"[{title}]({url})"
+    except:
+        return f"[{url}]({url})"
+
+
+def main(start_data, end_data):
     ###### CUSTOMIZE COLOR THEME ######
     alt.themes.register("finastra", finastra_theme)
     alt.themes.enable("finastra")
@@ -83,7 +94,7 @@ def main(time_period):
 
     ###### LOAD DATA ######
     with st.spinner(text="Fetching Data..."):
-        data, companies = load_data(time_period)
+        data, companies = load_data(start_data, end_data)
     df_conn = data["conn"]
     df_data = data["data"]
     embeddings = data["embed"]
@@ -145,9 +156,18 @@ def main(time_period):
         URL_Expander = st.beta_expander(f"View {company.title()} Data:", True)
         URL_Expander.write(f"### {len(df_company):,d} Matching Articles for " +
                            company.title())
-        display_cols = ["DATE", "SourceCommonName", "URL", "Tone", "Polarity",
-                        "ActivityDensity", "SelfDensity"]  #  "WordCount"
+        display_cols = ["DATE", "SourceCommonName", "Tone", "Polarity",
+                        "NegativeTone", "PositiveTone"]  #  "WordCount"
         URL_Expander.write(df_company[display_cols])
+
+        ####
+        URL_Expander.write(f"#### Sample Articles")
+        link_df = df_company[["DATE", "URL"]].head(3).copy()
+        # link_df["URL"] = link_df["URL"].apply(lambda R: f"[{R}]({R})")
+        link_df["ARTICLE"] = link_df.URL.apply(get_clickable_name)
+        link_df = link_df[["DATE", "ARTICLE"]].to_markdown(index=False)
+        URL_Expander.markdown(link_df)
+        ####
 
 
         ###### CHART: METRIC OVER TIME ######
@@ -344,17 +364,20 @@ def main(time_period):
 
 if __name__ == "__main__":
     args = sys.argv
-    if len(args) == 1:
-        time_period = "ten_days"
+    if len(args) != 3:
+        start_data = "dec30"
+        end_data = "jan12"
     else:
-        time_period = args[1]
-    # if time_period not in ["ten_days", "one_month"]:
-    if time_period not in ["ten_days"]:
-        print("NOT A VALID PERIOD! Pick one of \n    ten_days\n    one_month")
+        start_data = args[1]
+        end_data = args[2]
+
+    if f"{start_data}_to_{end_data}" not in os.listdir("Data"):
+        print(f"There isn't data for {dir_name}")
+        raise NameError(f"Please pick from {os.listdir('Data')}")
         sys.exit()
         st.stop()
     else:
-        main(time_period)
+        main(start_data, end_data)
     alt.themes.enable("default")
 
 
